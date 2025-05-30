@@ -1,7 +1,7 @@
-// config/db.js
+
 require('dotenv').config();
-console.log('DB_USER:', process.env.DB_USER); // Adicione esta linha
-console.log('DB_DATABASE:', process.env.DB_DATABASE); // Adicione esta linha
+console.log('DB_USER:', process.env.DB_USER); // Saber qual usuario esta
+console.log('DB_DATABASE:', process.env.DB_DATABASE);  // Saber qual banco de dados esta
 const { Pool } = require('pg');
 
 const pool = new Pool({
@@ -12,7 +12,7 @@ const pool = new Pool({
     port: process.env.DB_PORT,
 });
 
-pool.on('connect', () => {
+pool.on('connect', () => {// Conectar no Banco do PostgreSQL
     console.log('Conectado ao banco de dados PostgreSQL!');
 });
 

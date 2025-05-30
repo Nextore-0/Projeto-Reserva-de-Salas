@@ -45,12 +45,12 @@
             messageElement.classList.remove('success'); // Remove classe de sucesso
 
              try {
-                const response = await fetch('/api/users', {
-                    method: 'POST',
+                const response = await fetch('/api/users', {// Joga as informacoes para o banco
+                    method: 'POST',// Criar
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ email, senha, cpf })
+                    body: JSON.stringify({ email, senha, cpf })// Transforma em uma string
                 });
 
                 const data = await response.json();
@@ -62,7 +62,7 @@
                 } else {
                     messageElement.textContent = data.message || 'Erro ao cadastrar pessoa.';
                 }
-            } catch (error) {
+            } catch (error) {// Reconhece o Erro
                 console.error('Erro na requisição:', error);
                 messageElement.textContent = 'Erro de conexão com o servidor.';
             }

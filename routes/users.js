@@ -6,17 +6,17 @@ const bcrypt = require('bcryptjs'); // Para criptografia de senhas
 
 // Rota para CRIAR um novo usuário (cadastro de pessoa)
 router.post('/', async (req, res) => {
-    const { email, senha, cpf } = req.body;
+    const { email, senha, cpf } = req.body;// Pega os Parametros
 
     if (!email || !senha || !cpf) {
-        return res.status(400).json({ message: 'Email, Senha e CPF são obrigatórios.' });
+        return res.status(400).json({ message: 'Email, Senha e CPF são obrigatórios.' }); // Caso nao preencha os campos
     }
 
     try {
         // Verifica se o email ou CPF já existem
         const userExists = await db.query('SELECT id FROM users WHERE email = $1 OR cpf = $2', [email, cpf]);
         if (userExists.rows.length > 0) {
-            return res.status(409).json({ message: 'Email ou CPF já cadastrados.' });
+            return res.status(409).json({ message: 'Email ou CPF já cadastrados.' }); // Caso coloque um que ja esta cadastrado
         }
 
         // Criptografa a senha antes de salvar
@@ -30,8 +30,8 @@ router.post('/', async (req, res) => {
         );
         res.status(201).json({ message: 'Usuário cadastrado com sucesso!', user: result.rows[0] });
     } catch (err) {
-        console.error('Erro ao cadastrar usuário:', err);
-        res.status(500).json({ message: 'Erro interno do servidor ao cadastrar usuário.' });
+        console.error('Erro ao cadastrar usuário:', err);// Caso acontece algum erro
+        res.status(500).json({ message: 'Erro interno do servidor ao cadastrar usuário.' }); // Caso seje um erro no server
     }
 });
 
@@ -118,9 +118,9 @@ router.delete('/:id', async (req, res) => {
         }
         res.status(200).json({ message: 'Usuário deletado com sucesso!' });
     } catch (err) {
-        console.error('Erro ao deletar usuário:', err);
+        console.error('Erro ao deletar usuário:', err);// Erro no Servidor
         res.status(500).json({ message: 'Erro interno do servidor ao deletar usuário.' });
     }
 });
 
-module.exports = router;
+module.exports = router;// Exporta router
