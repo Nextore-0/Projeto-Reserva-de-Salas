@@ -1,0 +1,209 @@
+/* Reset básico para garantir consistência entre navegadores */
+* {
+  box-sizing: border-box;
+  margin: 0; /* Adicionado: Remove margens padrão dos navegadores */
+  padding: 0; /* Adicionado: Remove paddings padrão dos navegadores */
+}
+
+/* --- Variáveis CSS para facilitar a manutenção e padronização --- */
+:root {
+  --primary-green: rgb(
+    66,
+    182,
+    95
+  ); /* Verde principal para cabeçalhos e rodapés */
+  --light-green-bg: rgb(
+    199,
+    253,
+    182
+  ); /* Fundo verde claro do container principal */
+  --dark-gray: #333; /* Cinza escuro para botões e texto geral */
+  --medium-gray: #555; /* Um cinza intermediário */
+  --light-gray-border: #ddd; /* Borda suave para inputs */
+  --white: #ffffff;
+  --box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Sombra mais suave e espalhada */
+  --border-radius-lg: 15px; /* Bordas arredondadas maiores para elementos principais */
+  --border-radius-sm: 6px; /* Bordas arredondadas menores para inputs/botões */
+  --font-body: "Segoe UI", Roboto, Helvetica, Arial, sans-serif; /* Fonte moderna e limpa */
+  --font-heading: "Poppins", sans-serif; /* Fonte para títulos, se disponível (senão, fallback) */
+}
+
+/* Importar fontes do Google Fonts, se desejar. Adicione ao HTML:
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Segoe+UI&display=swap" rel="stylesheet">
+*/
+
+/* --- Estilos Gerais do Corpo e Container Principal --- */
+body {
+  font-family: var(--font-body); /* Usando a variável de fonte */
+  font-size: 16px; /* Tamanho de fonte padrão mais comum */
+  line-height: 1.6; /* Aumenta o espaçamento entre linhas para melhor legibilidade */
+  color: var(--dark-gray); /* Cor de texto padrão */
+  background-color: var(--light-green-bg); /* Cor de fundo do MainContainer */
+  display: flex; /* Adicionado: Para centralizar o box verticalmente */
+  justify-content: center; /* Adicionado: Para centralizar o box horizontalmente */
+  align-items: center; /* Adicionado: Para centralizar o box verticalmente */
+  min-height: 100vh; /* Garante que o corpo ocupe a altura total da viewport */
+  margin: 0; /* Resetado no * */
+}
+
+.mainContainer {
+  /* Não precisamos mais de background-color aqui, já está no body */
+  /* Remove width/margin:auto se App.jsx já estiver centralizando */
+  display: flex; /* Adicionado: Para organizar cabeçalho, box e rodapé */
+  flex-direction: column; /* Organiza os filhos em coluna */
+  min-height: 100vh; /* Garante que o container principal também ocupe a tela */
+  width: 100%; /* Ocupa toda a largura disponível */
+}
+
+/* --- Estilização da Box Principal (Formulário/Conteúdo Central) --- */
+.box {
+  width: 90%; /* Ajustado para ser mais responsivo, ocupa 90% da largura */
+  max-width: 500px; /* Adicionado: Define uma largura máxima para não esticar demais em telas grandes */
+  margin: 40px auto; /* Centraliza a box com margem superior/inferior */
+  background-color: var(--white); /* Fundo branco */
+  box-shadow: var(--box-shadow); /* Sombra mais elegante */
+  border-radius: var(--border-radius-lg); /* Bordas mais arredondadas */
+  padding: 30px; /* Adicionado: Espaçamento interno para o conteúdo da box */
+  display: flex; /* Adicionado: Para organizar os elementos internos */
+  flex-direction: column; /* Coloca os elementos internos em coluna */
+  justify-content: center; /* Centraliza verticalmente o conteúdo da box */
+  align-items: center; /* Centraliza horizontalmente o conteúdo da box */
+  min-height: 450px; /* Ajuste min-height em vez de height fixo para flexibilidade */
+}
+
+/* --- Estilização do Cabeçalho Principal (Sistema Reserva de Salas) --- */
+.mainCabeçalho {
+  background: var(--primary-green); /* Cor de fundo usando variável */
+  padding: 25px 20px; /* Mais padding para um visual mais robusto */
+  text-align: center;
+  color: var(--white);
+  /* Remover width: 100%; e margin: auto; pois o flexbox do .mainContainer já lida com isso */
+}
+
+.mainCabeçalho h1 {
+  font-family: var(
+    --font-heading
+  ); /* Usando a variável de fonte para títulos */
+  font-size: 2.8em; /* Tamanho relativo à fonte do body, ou defina em px */
+  font-weight: 600; /* Um pouco mais encorpado */
+  margin: 0; /* Remover margem padrão do h1 */
+}
+
+/* --- Estilização do Título dentro da Box (Realize o Login) --- */
+.box h3 {
+  font-family: var(--font-heading); /* Fonte para o subtítulo */
+  font-size: 1.8em;
+  color: var(--primary-green);
+  text-align: center;
+  margin-top: 0; /* Resetar a margem superior padrão do h3 ou a do seu código */
+  margin-bottom: 25px; /* Espaçamento abaixo do título */
+  width: 100%; /* Ocupa toda a largura disponível dentro do padding da box */
+  padding: 0; /* Remover padding aqui, já tem padding na box */
+}
+
+/* --- Estilização dos Campos de Texto (Inputs) --- */
+.box .campoTextual {
+  width: 100%; /* Garante que o container do input ocupe a largura */
+  text-align: center; /* Centraliza o input dentro do campoTextual */
+  padding: 0; /* Remover padding-top, usar margin-bottom nos inputs */
+  margin-bottom: 15px; /* Espaçamento entre os grupos de input */
+}
+
+.box .campoTextual input {
+  padding: 12px 15px; /* Mais padding para melhor toque e visual */
+  width: 85%; /* Ajuste para ter mais largura dentro do box, considerando padding */
+  border: 1px solid var(--light-gray-border); /* Borda sutil */
+  border-radius: var(--border-radius-sm); /* Bordas levemente arredondadas */
+  font-size: 1em; /* Tamanho de fonte consistente */
+  color: var(--dark-gray);
+  outline: none; /* Remove a borda azul/preta padrão ao focar */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave no foco */
+}
+
+.box .campoTextual input:focus {
+  border-color: var(--primary-green); /* Borda verde ao focar */
+  box-shadow: 0 0 0 3px rgba(66, 182, 95, 0.2); /* Sombra suave no foco */
+}
+
+/* --- Estilização dos Botões --- */
+.box .button {
+  width: 100%; /* Garante que o container do botão ocupe a largura */
+  text-align: center; /* Centraliza o botão */
+  /* Remover padding-top/margin-top/margin-bottom aqui, use margin-top no próprio botão */
+}
+
+.box .button button {
+  /* display: block; já é o padrão para button se width for 100% */
+  padding: 12px 25px; /* Mais padding para botões */
+  color: var(--medium-gray);
+  background-color: var(--dark-gray); /* Cor escura para o botão principal */
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-size: 1.1em; /* Fonte ligeiramente maior */
+  font-weight: 600; /* Mais encorpada */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transições suaves */
+  margin-top: 20px; /* Ajuste o espaçamento acima dos botões */
+  margin-bottom: 15px; /* Ajuste o espaçamento abaixo dos botões */
+  /* Remover margin-left/right: auto se o parent tiver text-align: center ou display:flex e justify-content:center */
+}
+
+.box .button button:hover {
+  background-color: var(--medium-gray); /* Um pouco mais claro no hover */
+  transform: translateY(-2px); /* Pequeno efeito de elevação */
+}
+
+/* Estilo para um segundo botão (ex: Cadastrar-se) com visual diferente */
+.box .button button:last-child {
+  /* Se o "Cadastrar-se" for o último botão */
+  background-color: #f0f0f0; /* Fundo cinza claro */
+  color: var(--medium-gray); /* Texto cinza */
+  border: 1px solid var(--light-gray-border); /* Borda suave */
+  font-weight: 500;
+}
+
+.box .button button:last-child:hover {
+  background-color: #e0e0e0;
+  color: var(--dark-gray);
+  transform: translateY(-2px);
+}
+
+/* --- Estilização do Rodapé Principal --- */
+.mainFooter {
+  background: var(--primary-green); /* Cor de fundo usando variável */
+  color: var(--white);
+  font-size: 1em;
+  text-align: center;
+  padding: 10px 0; /* Padding vertical para o texto do rodapé */
+  /* Remover width: 100%; e margin: auto; pois o flexbox do .mainContainer já lida com isso */
+  margin-top: auto; /* Adicionado: Empurra o rodapé para o final do mainContainer */
+}
+
+/* --- Responsividade Básica (Opcional, mas recomendado) --- */
+@media (max-width: 768px) {
+  .box {
+    width: 95%; /* Ocupa mais largura em telas menores */
+    margin: 20px auto; /* Menos margem vertical em telas pequenas */
+    padding: 20px;
+  }
+
+  .mainCabeçalho h1 {
+    font-size: 2em; /* Diminui o título principal */
+    padding: 15px 10px;
+  }
+
+  .box h3 {
+    font-size: 1.5em; /* Diminui o subtítulo */
+    margin-bottom: 20px;
+  }
+
+  .box .campoTextual input {
+    width: 90%; /* Aumenta a largura dos inputs em telas menores */
+  }
+
+  .box .button button {
+    width: 90%; /* Aumenta a largura dos botões em telas menores */
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+}
