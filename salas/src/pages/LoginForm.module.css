@@ -13,12 +13,13 @@
     95
   ); /* Verde principal para cabeçalhos e rodapés */
   --light-green-bg: rgb(
-    199,
-    253,
-    182
+    207,
+    252,
+    193
   ); /* Fundo verde claro do container principal */
   --dark-gray: #333; /* Cinza escuro para botões e texto geral */
   --medium-gray: #555; /* Um cinza intermediário */
+  --light-gray: #999999;
   --light-gray-border: #ddd; /* Borda suave para inputs */
   --white: #ffffff;
   --box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1); /* Sombra mais suave e espalhada */
@@ -78,6 +79,7 @@ body {
   text-align: center;
   color: var(--white);
   /* Remover width: 100%; e margin: auto; pois o flexbox do .mainContainer já lida com isso */
+  width: 100%;
 }
 
 .mainCabeçalho h1 {
@@ -115,7 +117,7 @@ body {
   border: 1px solid var(--light-gray-border); /* Borda sutil */
   border-radius: var(--border-radius-sm); /* Bordas levemente arredondadas */
   font-size: 1em; /* Tamanho de fonte consistente */
-  color: var(--dark-gray);
+  color: var(--light-gray);
   outline: none; /* Remove a borda azul/preta padrão ao focar */
   transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave no foco */
 }
@@ -177,6 +179,7 @@ body {
   padding: 10px 0; /* Padding vertical para o texto do rodapé */
   /* Remover width: 100%; e margin: auto; pois o flexbox do .mainContainer já lida com isso */
   margin-top: auto; /* Adicionado: Empurra o rodapé para o final do mainContainer */
+  width: 100%;
 }
 
 /* --- Responsividade Básica (Opcional, mas recomendado) --- */
