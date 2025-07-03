@@ -1,0 +1,116 @@
+/* --- Reset Básico e Box Sizing --- */
+* {
+  box-sizing: border-box; /* Garante que padding e border não aumentem a largura/altura total */
+  margin: 0; /* Remove margens padrão dos navegadores */
+  padding: 0; /* Remove paddings padrão dos navegadores */
+}
+
+/* --- Variáveis CSS: Centralize cores, fontes, sombras e raios de borda para facilitar a manutenção --- */
+:root {
+  /* Cores */
+  --color-primary-green: #2ecc71; /* Um verde mais vibrante e moderno */
+  --color-light-green-bg: #e8f9e6; /* Fundo verde pastel bem suave */
+  --color-dark-text: #34495e; /* Cor de texto escuro (azul-acinzentado) */
+  --color-medium-text: #7f8c8d; /* Cor de texto cinza médio */
+  --color-light-border: #bdc3c7; /* Borda suave */
+  --color-white: #ffffff; /* Branco puro */
+  --color-menu-hover: #555; /* Cinza para hover do menu */
+
+  /* Fontes */
+  --font-body: "Roboto", sans-serif;
+  --font-heading: "Montserrat", sans-serif;
+}
+
+/* --- Estilo para o Corpo (body) --- */
+body {
+  font-family: var(--font-body); /* Aplica a fonte principal */
+  font-size: 16px; /* Tamanho de fonte base */
+  line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
+  color: var(--color-dark-text); /* Cor de texto padrão */
+  margin: 0;
+}
+
+/* --- Container Principal das Salas (.salas) --- */
+.salas {
+  background-color: var(--color-light-green-bg); /* Fundo verde pastel suave */
+  min-height: 100vh; /* Garante que o container ocupe a altura total da viewport */
+  display: flex; /* Para organizar o conteúdo (menu e corpo da página) */
+  flex-direction: column; /* Empilha os elementos verticalmente */
+  width: 100%; /* Ocupa a largura total */
+}
+
+/* --- Menu Horizontal (#menuHorizontal) --- */
+#menuHorizontal {
+  width: 100%; /* Ocupa a largura total */
+  margin: 0; /* Remove margens extras */
+  opacity: 1; /* Removi a opacidade baixa, geralmente não é desejável para um menu */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave para destacar o menu */
+  flex-shrink: 0; /* Não permite que o menu encolha */
+}
+
+#menuHorizontal ul {
+  list-style: none; /* Remove os marcadores de lista */
+  padding: 0; /* Remove padding padrão da UL */
+  background-color: var(--color-primary-green); /* Fundo verde vibrante */
+  text-align: center; /* Centraliza os itens de menu */
+  display: flex; /* Usa flexbox para os itens do menu */
+  justify-content: center; /* Centraliza os itens horizontalmente */
+  flex-wrap: wrap; /* Permite que os itens quebrem linha em telas menores */
+  padding: 15px 10px; /* Espaçamento interno da barra de menu */
+}
+
+#menuHorizontal ul li {
+  display: inline-block; /* Mantém os itens em uma linha (pode ser substituído por flex no UL) */
+  margin: 0 10px; /* Espaçamento entre os itens do menu */
+}
+
+#menuHorizontal ul li a {
+  font-family: var(--font-heading); /* Fonte para os itens do menu */
+  font-size: 1.5em; /* Tamanho de fonte maior para links de menu */
+  font-weight: 600; /* Mais encorpado */
+  color: var(--color-white); /* Texto branco */
+  text-decoration: none; /* Remove o sublinhado */
+  padding: 10px 15px; /* Preenchimento para a área clicável do link */
+  display: block; /* Faz o link preencher o padding e ser clicável */
+  border-radius: var(
+    --border-radius-input-btn
+  ); /* Bordas arredondadas para os links */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave no hover */
+}
+
+#menuHorizontal ul li a:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.2
+  ); /* Fundo branco semi-transparente no hover */
+  color: var(--color-white); /* Mantém a cor do texto branca */
+  /* Removi a opacidade no hover, pois geralmente não é desejável para menus */
+}
+
+/* --- Responsividade do Menu Horizontal --- */
+@media (max-width: 768px) {
+  #menuHorizontal ul {
+    flex-direction: column; /* Itens do menu empilhados em telas menores */
+    align-items: center; /* Centraliza os itens verticalmente */
+    padding: 10px; /* Ajusta padding */
+  }
+
+  #menuHorizontal ul li {
+    margin: 5px 0; /* Mais espaçamento vertical entre os itens empilhados */
+    width: 100%; /* Cada item ocupa a largura total para fácil toque */
+  }
+
+  #menuHorizontal ul li a {
+    font-size: 1.2em; /* Diminui a fonte dos links */
+    padding: 12px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  #menuHorizontal ul li a {
+    font-size: 1.1em;
+    padding: 10px 8px;
+  }
+}
