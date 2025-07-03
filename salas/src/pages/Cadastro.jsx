@@ -14,6 +14,10 @@ export default function Cadastro() {
     return navigate("/");
   };
 
+  const handleSalasCadastradas = () => {
+    return navigate("/SalasCadastradas");
+  };
+
   return (
     <div className={styles.mainContainer}>
       <header className={styles.mainCabeçalho}>
@@ -53,7 +57,7 @@ export default function Cadastro() {
         </div>
 
         <div className={styles.button}>
-          <button type="submit">Cadastrar</button>
+          <button onClick={handleSalasCadastradas} type="submit">Cadastrar</button>
         </div>
 
         <div className={styles.button}>
