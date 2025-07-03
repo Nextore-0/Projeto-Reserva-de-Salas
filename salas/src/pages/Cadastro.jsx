@@ -59,6 +59,9 @@ export default function Cadastro() {
           <button onClick={handleContact}>Voltar ao Login</button>
         </div>
       </div>
+      <footer className={styles.mainFooter}>
+        <p>Sistema Reserva de Salas - 2025</p>
+      </footer>
     </div>
   );
 }
