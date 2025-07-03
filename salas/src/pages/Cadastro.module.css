@@ -87,7 +87,7 @@ body {
   font-size: 2.1em; /* Tamanho relativo à fonte do body, ou defina em px */
   font-weight: 5800; /* Um pouco mais encorpado */
   margin: 0; /* Remover margem padrão do h1 */
-  padding: 20px;
+  padding: 10px;
   width: 100%;
 }
 
