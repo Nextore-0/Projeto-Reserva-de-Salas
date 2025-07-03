@@ -84,8 +84,8 @@ body {
   font-family: var(
     --font-heading
   ); /* Usando a variável de fonte para títulos */
-  font-size: 2.8em; /* Tamanho relativo à fonte do body, ou defina em px */
-  font-weight: 600; /* Um pouco mais encorpado */
+  font-size: 2.1em; /* Tamanho relativo à fonte do body, ou defina em px */
+  font-weight: 5800; /* Um pouco mais encorpado */
   margin: 0; /* Remover margem padrão do h1 */
 }
 
@@ -115,7 +115,7 @@ body {
   border: 1px solid var(--light-gray-border); /* Borda sutil */
   border-radius: var(--border-radius-sm); /* Bordas levemente arredondadas */
   font-size: 1em; /* Tamanho de fonte consistente */
-  color: var(--white);
+  background-color: var(--white);
   outline: none; /* Remove a borda azul/preta padrão ao focar */
   transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave no foco */
 }
@@ -157,7 +157,7 @@ body {
 .box .button button:last-child {
   /* Se o "Cadastrar-se" for o último botão */
   background-color: #f0f0f0; /* Fundo cinza claro */
-  color: var(--medium-gray); /* Texto cinza */
+  background-color: var(--white); /* Texto cinza */
   border: 1px solid var(--light-gray-border); /* Borda suave */
   font-weight: 500;
 }

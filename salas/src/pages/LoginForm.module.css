@@ -47,15 +47,6 @@ body {
   margin: 0; /* Resetado no * */
 }
 
-.mainContainer {
-  /* Não precisamos mais de background-color aqui, já está no body */
-  /* Remove width/margin:auto se App.jsx já estiver centralizando */
-  /* Adicionado: Para organizar cabeçalho, box e rodapé */
-
-  min-height: 100vh; /* Garante que o container principal também ocupe a tela */
-  width: 100%; /* Ocupa toda a largura disponível */
-}
-
 /* --- Estilização da Box Principal (Formulário/Conteúdo Central) --- */
 .box {
   width: 90%; /* Ajustado para ser mais responsivo, ocupa 90% da largura */
@@ -78,7 +69,6 @@ body {
   padding: 25px 20px; /* Mais padding para um visual mais robusto */
   text-align: center;
   color: var(--white);
-  /* Remover width: 100%; e margin: auto; pois o flexbox do .mainContainer já lida com isso */
   width: 100%;
 }
 
@@ -86,8 +76,8 @@ body {
   font-family: var(
     --font-heading
   ); /* Usando a variável de fonte para títulos */
-  font-size: 2.8em; /* Tamanho relativo à fonte do body, ou defina em px */
-  font-weight: 600; /* Um pouco mais encorpado */
+  font-size: 2.1em; /* Tamanho relativo à fonte do body, ou defina em px */
+  font-weight: 580; /* Um pouco mais encorpado */
   margin: 0; /* Remover margem padrão do h1 */
 }
 
@@ -117,7 +107,7 @@ body {
   border: 1px solid var(--light-gray-border); /* Borda sutil */
   border-radius: var(--border-radius-sm); /* Bordas levemente arredondadas */
   font-size: 1em; /* Tamanho de fonte consistente */
-  color: var(--light-gray);
+  background-color: var(--white);
   outline: none; /* Remove a borda azul/preta padrão ao focar */
   transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave no foco */
 }

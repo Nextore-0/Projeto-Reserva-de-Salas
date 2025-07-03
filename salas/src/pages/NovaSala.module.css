@@ -1,40 +1,121 @@
-body .salas {
+* {
+  box-sizing: border-box;
+}
+
+body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
   margin: 0;
+}
+
+.novasala {
   background-color: rgb(199, 253, 182);
 }
 
-#menuHorizontal {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+.titulo h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 40px;
+  color: white;
+  background: rgb(66, 182, 95);
+  text-align: center;
+  padding: 20px;
   width: 100%;
   margin: auto;
   margin-top: 0px;
 }
-#menuHorizontal ul {
-  list-style: none; /*tira os marcadores*/
-  padding: 16px;
-  background-color: rgb(66, 182, 95);
-  text-align: center; /*alinhar os elementos na direita*/
+
+.cabecalho h3 {
+  font-family: Arial, Helvetica, sans-serif, sans-serif;
+  font-size: 30px;
+  color: rgb(66, 182, 95);
+  text-align: center;
+  padding: 20px;
+  width: 60%;
+  margin: auto;
+  margin-top: 10px;
+}
+
+.formulario {
+  width: 80%;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  box-shadow: 0 4px 8px #4a4a4a;
+  border-radius: 30px;
+  height: 530px;
+  width: 42%;
+  background-color: white;
+}
+
+.campos {
+  font-family: Arial, Helvetica, sans-serif, sans-serif;
+  font-size: 15px;
+  text-align: center;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  width: 40%;
+  margin: auto;
+}
+
+.campos input {
+  padding: 3px;
+  width: 40%;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.campos label {
+  display: block;
   margin-top: 0px;
 }
 
-#menuHorizontal ul li {
-  display: inline-block; /*ficar em uma linha (e nao colunas)*/
-}
-#menuHorizontal ul li a {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 28px;
-  color: white;
-  text-decoration: none; /*tira o sublinhado*/
-  padding: 18px;
-  display: inline-block; /*cria um bloco com o padding informado*/
-  transition: background 1s; /*efeito de fade combinado com o hover*/
+.campos label select {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-#menuHorizontal ul li a:hover {
-  background-color: gray;
-  opacity: 0.5; /*opcional */
+.formulario button {
+  display: block;
+  text-align: center;
+  padding: 10px 22px;
+  color: white;
+  background-color: #4a4a4a;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.formulario button:hover {
+  background-color: #333;
+}
+
+.checkboxContainer {
+  display: flex;
+  gap: 8px;
+  flex-wrap: nowrap; /* não permite quebrar a linha em telas menores */
+  margin-top: 2px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+
+.horario input {
+  padding: 1px;
+  margin-top: 3px;
+}
+
+.rodape {
+  color: white;
+  background: rgb(66, 182, 95);
+  font-size: 17px;
+  text-align: center;
+  padding: 5px;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 0px;
 }
