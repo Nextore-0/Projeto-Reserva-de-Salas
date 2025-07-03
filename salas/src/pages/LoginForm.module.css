@@ -110,6 +110,7 @@ body {
   border-radius: var(--border-radius-sm); /* Bordas levemente arredondadas */
   font-size: 1em; /* Tamanho de fonte consistente */
   background-color: var(--white);
+  color: #333;
   outline: none; /* Remove a borda azul/preta padrão ao focar */
   transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave no foco */
 }
