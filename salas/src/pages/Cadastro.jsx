@@ -25,15 +25,6 @@ export default function Cadastro() {
       </header>
       <div className={styles.box}>
         <h3>Cadastre-se</h3>
-        <div className={styles.campoTextual}>
-          <input
-            type="text"
-            placeholder="Nome"
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            required
-          />
-        </div>
 
         <div className={styles.campoTextual}>
           <input
@@ -51,6 +42,16 @@ export default function Cadastro() {
             placeholder="Senha"
             value={senha}
             onChange={(e) => setSenha(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className={styles.campoTextual}>
+          <input
+            type="text"
+            placeholder="CPF"
+            value={text}
+            onChange={(e) => setText(e.target.value)}
             required
           />
         </div>
