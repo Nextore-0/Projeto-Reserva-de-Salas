@@ -50,7 +50,7 @@ body {
 .mainContainer {
   /* Não precisamos mais de background-color aqui, já está no body */
   /* Remove width/margin:auto se App.jsx já estiver centralizando */
-  display: flex; /* Adicionado: Para organizar cabeçalho, box e rodapé */
+  /* Adicionado: Para organizar cabeçalho, box e rodapé */
   flex-direction: column; /* Organiza os filhos em coluna */
   min-height: 100vh; /* Garante que o container principal também ocupe a tela */
   width: 100%; /* Ocupa toda a largura disponível */
