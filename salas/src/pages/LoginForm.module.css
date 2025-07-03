@@ -41,7 +41,6 @@ body {
   color: var(--dark-gray); /* Cor de texto padrão */
   background-color: var(--light-green-bg); /* Cor de fundo do MainContainer */
   display: flex; /* Adicionado: Para centralizar o box verticalmente */
-  justify-content: center; /* Adicionado: Para centralizar o box horizontalmente */
   align-items: center; /* Adicionado: Para centralizar o box verticalmente */
   min-height: 100vh; /* Garante que o corpo ocupe a altura total da viewport */
   margin: 0; /* Resetado no * */
@@ -79,6 +78,9 @@ body {
   font-size: 2.1em; /* Tamanho relativo à fonte do body, ou defina em px */
   font-weight: 580; /* Um pouco mais encorpado */
   margin: 0; /* Remover margem padrão do h1 */
+  margin-top: 0px;
+  padding: 10px;
+  width: 100%;
 }
 
 /* --- Estilização do Título dentro da Box (Realize o Login) --- */

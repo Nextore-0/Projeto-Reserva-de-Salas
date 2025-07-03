@@ -3,7 +3,7 @@ import styles from "./Cadastro.module.css";
 import { useNavigate } from "react-router-dom";
 
 export default function Cadastro() {
-  const [text, setText] = useState("");
+  const [text, setNumber] = useState("");
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
@@ -23,10 +23,10 @@ export default function Cadastro() {
         <h3>Cadastre-se</h3>
         <div className={styles.campoTextual}>
           <input
-            type="text"
-            placeholder="Nome"
+            type="number"
+            placeholder="CPF"
             value={text}
-            onChange={(e) => setText(e.target.value)}
+            onChange={(e) => setNumber(e.target.value)}
             required
           />
         </div>
