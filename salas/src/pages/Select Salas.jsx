@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./ReservaForm.css";
+import styles from "./Select Salas.module.css";
 
 export default function ReservaForm() {
   const [sala, setSala] = useState("");
@@ -26,11 +26,11 @@ export default function ReservaForm() {
 
   return (
     <div>
-      <header className="header">
+      <header className={styles.header}>
         <h1>Sistema de Reserva de Salas</h1>
       </header>
 
-      <div className="container">
+      <div className={styles.container}>
         <h2>Reservar Sala</h2>
         <form onSubmit={handleSubmit}>
           <label htmlFor="sala">Sala:</label>
@@ -54,10 +54,10 @@ export default function ReservaForm() {
           <button type="submit">Confirmar Reserva</button>
         </form>
 
-        {mensagem && <div className="msg">{mensagem}</div>}
+        {mensagem && <div className={styles.msg}>{mensagem}</div>}
       </div>
 
-      <footer className="footer">
+      <footer className={styles.footer}>
         <p>Sistema de Reservas - 2025</p>
       </footer>
     </div>

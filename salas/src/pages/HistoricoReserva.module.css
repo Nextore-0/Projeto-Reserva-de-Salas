@@ -1,0 +1,25 @@
+body {
+    font-family: sans-serif;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h2 {
+    text-align: center;
+}
+
+.reserva {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 10px 0;
+    background: #e2ffe9;
+    border-radius: 6px;
+}
