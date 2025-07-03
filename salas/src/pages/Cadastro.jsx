@@ -11,7 +11,7 @@ export default function Cadastro() {
 
   const handleContact = () => {
     console.log("Enviado!");
-    return navigate("/LoginForm");
+    return navigate("/");
   };
 
   return (
