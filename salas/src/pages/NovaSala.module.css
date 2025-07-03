@@ -1,0 +1,263 @@
+/* --- Reset Básico e Box Sizing --- */
+* {
+  box-sizing: border-box; /* Garante que padding e border não aumentem a largura/altura total */
+  margin: 0; /* Remove margens padrão dos navegadores */
+  padding: 0; /* Remove paddings padrão dos navegadores */
+}
+
+/* --- Variáveis CSS: Centralize cores, fontes, sombras e raios de borda para facilitar a manutenção --- */
+:root {
+  /* Cores */
+  --color-primary-green: #2ecc71; /* Um verde mais vibrante e moderno */
+  --color-light-green-bg: #e8f9e6; /* Fundo verde pastel bem suave */
+  --color-dark-text: #34495e; /* Cor de texto escuro (azul-acinzentado) */
+  --color-medium-text: #7f8c8d; /* Cor de texto cinza médio */
+  --color-light-border: #bdc3c7; /* Borda suave para inputs */
+  --color-white: #ffffff; /* Branco puro */
+  --color-accent-purple: #8e44ad; /* Um toque de roxo para contraste, se necessário */
+
+  /* Sombras */
+  --shadow-sm: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave para elementos leves */
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada para cards */
+  --shadow-focus: 0 0 0 3px rgba(46, 204, 113, 0.3); /* Sombra suave para o foco do input */
+
+  /* Raios de Borda */
+  --border-radius-card: 15px; /* Raio para cards/caixas principais */
+  --border-radius-input-btn: 8px; /* Raio para inputs e botões */
+
+  /* Fontes (usando Google Fonts: Montserrat para títulos, Roboto para corpo) */
+  --font-body: "Roboto", sans-serif;
+  --font-heading: "Montserrat", sans-serif;
+}
+
+/* --- Estilo para o Corpo (body) --- */
+body {
+  font-family: var(--font-body); /* Aplica a fonte principal */
+  font-size: 16px; /* Tamanho de fonte base */
+  line-height: 1.6; /* Espaçamento entre linhas para melhor leitura */
+  color: var(--color-dark-text); /* Cor de texto padrão */
+  background-color: var(--color-light-green-bg); /* Fundo geral da página */
+  display: flex; /* Usa flexbox para centralizar o conteúdo */
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+}
+
+/* --- Container Principal (.novasala) --- */
+.novasala {
+  display: flex; /* Transforma em um container flexível */
+  flex-direction: column; /* Empilha os itens verticalmente (título, formulário, rodapé) */
+  min-height: 100vh; /* Garante que o container se estenda pela tela */
+  width: 100%; /* Ocupa a largura total */
+}
+
+/* --- Título Principal da Aplicação (.titulo) --- */
+.titulo {
+  background: var(--color-primary-green); /* Fundo verde vibrante */
+  padding: 25px 20px; /* Espaçamento interno generoso */
+  text-align: center; /* Centraliza o texto */
+  color: var(--color-white); /* Texto branco */
+  flex-shrink: 0; /* Não permite que o cabeçalho encolha */
+}
+
+.titulo h1 {
+  font-family: var(--font-heading); /* Fonte para títulos */
+  font-size: 2.8em; /* Tamanho de fonte escalável */
+  font-weight: 700; /* Mais encorpado */
+  margin: 0; /* Remove margem padrão do h1 */
+  letter-spacing: -0.02em; /* Ajuste leve para melhor leitura */
+}
+
+/* --- Cabeçalho Interno do Formulário (.cabecalho) --- */
+.cabecalho h3 {
+  font-family: var(--font-heading); /* Fonte para subtítulos */
+  font-size: 1.8em; /* Tamanho de fonte escalável */
+  font-weight: 600; /* Encorpado */
+  color: var(--color-primary-green); /* Cor verde */
+  text-align: center; /* Centraliza o texto */
+  padding: 0; /* Remove padding, ajuste com margem */
+  margin-top: 30px; /* Espaçamento acima do título */
+  margin-bottom: 25px; /* Espaçamento abaixo do título */
+  width: 100%; /* Ocupa a largura total disponível */
+}
+
+/* --- Container do Formulário (.formulario) --- */
+.formulario {
+  width: 90%; /* Mais responsivo: 90% da largura em telas menores */
+  max-width: 550px; /* Limite de largura para não esticar muito em telas grandes */
+  margin: 30px auto; /* Centraliza horizontalmente e adiciona margens verticais */
+  background-color: var(--color-white); /* Fundo branco */
+  box-shadow: var(--shadow-lg); /* Sombra elegante */
+  border-radius: var(--border-radius-card); /* Bordas bem arredondadas */
+  padding: 30px 40px; /* Espaçamento interno generoso e uniforme */
+  display: flex; /* Usa flexbox para organizar o conteúdo interno */
+  flex-direction: column; /* Empilha os itens internos verticalmente */
+  align-items: center; /* Centraliza os itens horizontalmente dentro da box */
+  min-height: 480px; /* Altura mínima flexível */
+  justify-content: center; /* Centraliza os itens verticalmente dentro da box */
+}
+
+/* --- Seção de Campos de Input (.campos) --- */
+.campos {
+  width: 100%; /* Ocupa a largura total do .formulario */
+  margin: 0 0 15px 0; /* Margem inferior para espaçar grupos de campos */
+  text-align: left; /* Alinha o texto do label à esquerda */
+  font-family: var(--font-body);
+  font-size: 0.95em;
+  color: var(--color-dark-text);
+}
+
+.campos label {
+  display: block; /* Garante que o label ocupe sua própria linha */
+  margin-bottom: 8px; /* Espaçamento entre o label e o input */
+  font-weight: 600; /* Label em negrito */
+  color: var(--color-dark-text);
+}
+
+.campos input,
+.campos select {
+  /* Estiliza tanto input quanto select */
+  padding: 12px 15px; /* Preenchimento consistente para inputs/selects */
+  width: 100%; /* Inputs e selects ocupam a largura total do .campos */
+  border: 1px solid var(--color-light-border); /* Borda suave */
+  border-radius: var(--border-radius-input-btn); /* Bordas arredondadas */
+  font-size: 1em; /* Tamanho de fonte padrão */
+  color: var(--color-dark-text); /* Cor do texto digitado */
+  outline: none; /* Remove o contorno azul/preto padrão ao focar */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transição suave no foco */
+}
+
+.campos input::placeholder {
+  color: var(--color-medium-text); /* Cor do placeholder */
+}
+
+.campos input:focus,
+.campos select:focus {
+  border-color: var(--color-primary-green); /* Borda verde ao focar */
+  box-shadow: var(--shadow-focus); /* Sombra suave ao focar */
+}
+
+.campos label select {
+  margin-top: 5px; /* Ajusta a margem superior específica para selects */
+  margin-bottom: 5px; /* Ajusta a margem inferior específica para selects */
+}
+
+/* --- Container de Checkbox (Horários) --- */
+.checkboxContainer {
+  display: flex; /* Usa flexbox para organizar checkboxes */
+  flex-wrap: wrap; /* Permite que os checkboxes quebrem linha */
+  justify-content: center; /* Centraliza os checkboxes horizontalmente */
+  gap: 15px; /* Espaçamento entre os itens checkbox */
+  margin-top: 15px; /* Espaçamento acima do grupo de checkboxes */
+  margin-bottom: 25px; /* Espaçamento abaixo do grupo de checkboxes */
+  padding: 15px; /* Padding interno para o container */
+  border: 1px solid var(--color-light-border); /* Borda suave */
+  border-radius: var(--border-radius-input-btn); /* Bordas arredondadas */
+  background-color: var(--color-white); /* Fundo branco */
+  box-shadow: var(--shadow-sm); /* Sombra leve */
+}
+
+.checkboxContainer .horario {
+  /* Estilo para cada item de horário */
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.95em;
+  color: var(--color-dark-text);
+}
+
+.checkboxContainer .horario input[type="checkbox"] {
+  width: auto; /* Checkbox não ocupa 100% */
+  padding: 0;
+  margin: 0;
+  accent-color: var(--color-primary-green); /* Muda a cor do checkbox nativo */
+}
+
+/* --- Botão de Submissão (.formulario button) --- */
+.formulario button {
+  display: block; /* Garante que o botão ocupe sua própria linha */
+  padding: 15px 35px; /* Mais padding para botões */
+  color: var(--color-white); /* Texto branco */
+  background-color: var(
+    --color-primary-green
+  ); /* Cor de fundo para o botão principal (verde) */
+  border: none; /* Sem borda */
+  border-radius: var(--border-radius-input-btn); /* Bordas arredondadas */
+  cursor: pointer; /* Cursor de mão ao passar por cima */
+  font-size: 1.1em; /* Fonte ligeiramente maior */
+  font-weight: 700; /* Mais encorpado */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transições suaves */
+  margin: 25px auto 15px auto; /* Margens e centralização */
+  width: 90%; /* Garante largura generosa */
+  max-width: 300px; /* Limita a largura do botão em telas maiores */
+}
+
+.formulario button:hover {
+  background-color: #27ae60; /* Verde um pouco mais escuro no hover */
+  transform: translateY(-2px); /* Efeito de elevação sutil */
+}
+
+/* --- Rodapé da Aplicação (.rodape) --- */
+.rodape {
+  background: var(--color-primary-green); /* Fundo verde vibrante */
+  color: var(--color-white); /* Texto branco */
+  font-size: 0.9em; /* Tamanho de fonte um pouco menor */
+  text-align: center; /* Centraliza o texto */
+  padding: 15px 0; /* Espaçamento vertical */
+  margin-top: auto; /* Empurra o rodapé para o final do novasala */
+  flex-shrink: 0; /* Não permite que o rodapé encolha */
+}
+
+/* --- Responsividade (Media Queries) --- */
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+
+  .titulo h1 {
+    font-size: 2.2em; /* Reduz o título principal */
+    padding: 20px 15px;
+  }
+
+  .cabecalho h3 {
+    font-size: 1.5em; /* Reduz o subtítulo */
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .formulario {
+    width: 95%; /* Ocupa mais largura em telas menores */
+    margin: 20px auto; /* Reduz margem vertical */
+    padding: 25px 20px;
+  }
+
+  .campos input,
+  .campos select,
+  .formulario button {
+    width: 100%; /* Inputs e botões ocupam a largura total em telas pequenas */
+  }
+
+  .formulario button {
+    padding: 12px 25px;
+    margin: 20px auto 10px auto;
+  }
+
+  .checkboxContainer {
+    flex-direction: column; /* Empilha os checkboxes verticalmente em telas pequenas */
+    align-items: flex-start; /* Alinha à esquerda */
+    gap: 10px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo h1 {
+    font-size: 1.8em;
+  }
+  .cabecalho h3 {
+    font-size: 1.3em;
+  }
+  .formulario {
+    padding: 20px 15px;
+  }
+}
